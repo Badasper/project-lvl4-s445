@@ -1,0 +1,23 @@
+{
+  "name": "hexlet-level4-ya",
+  "version": "1.0.0",
+  "description": "Yet another task manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Badasper/project-lvl4-s445.git"
+  },
+  "keywords": [
+    "koa",
+    "js"
+  ],
+  "author": "Yakovlev Alexander",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Badasper/project-lvl4-s445/issues"
+  },
+  "homepage": "https://github.com/Badasper/project-lvl4-s445#readme"
+}
