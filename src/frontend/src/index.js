@@ -1,5 +1,6 @@
-import 'jquery';
-import 'popper.js';
+// import 'jquery';
+// import 'popper.js';
+import 'bootstrap';
 import './js';
 
 import './assets/scss/main.scss';

@@ -5,7 +5,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
 const PATHS = {
   src: path.join(__dirname, '../src'),
   dist: path.join(__dirname, '../dist'),
@@ -15,15 +14,15 @@ const PATHS = {
 
 const env = process.env.NODE_ENV || 'development';
 
-const devPlugins = () => {
-  if (env === 'development') {
+const devPlugins = (environment) => {
+  if (environment === 'development') {
     return [new webpack.SourceMapDevToolPlugin({ filename: '[file].map' })];
   }
   return [];
 };
 
-const devConfig = () => {
-  if (env === 'development') {
+const devConfig = (environment) => {
+  if (environment === 'development') {
     return {
       devtool: 'cheap-module-eval-source-map',
       devServer: {
@@ -41,12 +40,12 @@ const devConfig = () => {
 
 module.exports = {
   mode: env,
-  ...devConfig(),
+  ...devConfig(env),
   entry: {
     app: PATHS.src,
   },
   output: {
-    filename: `${PATHS.assets}js/[name].[hash].js`,
+    filename: `${PATHS.assets}js/[name].bundle.[hash].js`,
     path: PATHS.dist,
     publicPath: '/',
   },
@@ -117,21 +116,23 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.pug$/,
+        use: ['pug-loader'],
+      },
     ],
   },
   resolve: {
     alias: {
       '~': PATHS.src,
-      vue$: 'vue/dist/vue.js',
     },
   },
   plugins: [
     new MiniCssExtractPlugin({
       filename: `${PATHS.assets}css/[name].[hash].css`,
     }),
-    // Copy HtmlWebpackPlugin and change index.html for another html page
     new HtmlWebpackPlugin({
-      template: `${PATHS.src}/index.html`,
+      template: `${PATHS.src}/index.pug`,
       filename: './index.html',
       inject: true,
     }),
@@ -140,6 +141,6 @@ module.exports = {
       { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
       { from: `${PATHS.src}/static`, to: '' },
     ]),
-    ...devPlugins(),
+    ...devPlugins(env),
   ],
 };
