@@ -2,6 +2,8 @@
 .gulp
 .idea
 .vscode
+.ENV
+.prettierrc.yml
 
 # Node
 node_modules
