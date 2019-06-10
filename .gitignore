@@ -2,7 +2,7 @@
 .gulp
 .idea
 .vscode
-.ENV
+.env
 .prettierrc.yml
 
 # Node
