@@ -1,0 +1,33 @@
+{
+  "name": "hexlet-level4-ya",
+  "version": "1.0.0",
+  "description": "Yet another task manager with koajs from hexlet with love",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Badasper/project-lvl4-s445.git"
+  },
+  "keywords": [
+    "koa",
+    "hexlet",
+    "webpack",
+    "node",
+    "heroku",
+    "express"
+  ],
+  "author": "Yakovlev Alexander",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Badasper/project-lvl4-s445/issues"
+  },
+  "homepage": "https://github.com/Badasper/project-lvl4-s445#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.2"
+  }
+}
