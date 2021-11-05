@@ -1,8 +1,0 @@
-{
-  "name": "Hexlet lvl4 ya",
-  "description": "App for todo || task manager",
-  "repository": "",
-  "logo": "",
-  "keywords": ["node", "express", "heroku", "hexlet"],
-  "image": "heroku/nodejs"
-}
